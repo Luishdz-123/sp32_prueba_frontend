@@ -8,13 +8,13 @@ function App() {
   useEffect(() => {
     // 1. Lee la MAC del parámetro QR de la URL
     const parametros = new URLSearchParams(window.location.search);
-    const macDesdeQR = parametros.get('mac') || '9c:cc:01:82:09:60'; // MAC por defecto si no hay QR
+    const macDesdeQR = parametros.get('mac') || '00:70:07:a3:14:e4'; // MAC por defecto si no hay QR
     
     setSucursalMac(macDesdeQR);
 
     // 2. Opcional: Consultar el nombre real de la sucursal desde tu API (o dejar un fallback amigable)
     // Para simplificar y garantizar que funcione al 100% mañana, mapeamos el nombre según la MAC:
-    if (macDesdeQR === '9c:cc:01:82:09:60') {
+    if (macDesdeQR === '00:70:07:a3:14:e4') {
       setNombreSucursal('Sucursal Centro Test');
     } else if (macDesdeQR === '98:c3:77:8f:9e:28') {
       setNombreSucursal('Sucursal Chalco Test');
